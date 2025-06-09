@@ -1,0 +1,228 @@
+@import '@shared/ui/styles/fonts.css';
+@import '@shared/ui/styles/variables.css';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.modal {
+  background: var(--color-background);
+  border-radius: 1rem;
+  padding: 3.75rem 1.5rem;
+  width: 31.75rem;
+  height: 31rem;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  overflow: visible;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionTitle {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  font-weight: var(--font-weight-headings);
+  color: var(--color-text-primary);
+  margin: 0;
+  padding-left: 2.25rem;
+  font-family: var(--font-family-headings);
+}
+
+.actionButton {
+  background: none;
+  padding: 0 1rem;
+  border: none;
+  color: var(--color-primary);
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+  font-weight: var(--font-weight-headings);
+  cursor: pointer;
+  margin: 0.25rem 1.3rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+  font-family: var(--font-family-headings);
+  letter-spacing: var(--letter-spacing-body);
+}
+
+.actionButton:hover {
+  background-color: var(--color-button-hover);
+}
+
+.actionButton:focus {
+  outline: var(--outline);
+  outline-offset: var(--outline-offset);
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-left: 2.25rem;
+  margin-top: 1rem;
+}
+
+.itemsList.scrollableNew,
+.itemsList.scrollableViewed{
+  overflow-y: hidden;
+  transition: overflow-y 0.2s;
+  scrollbar-gutter: stable;
+  padding-right: 1rem;
+}
+
+.itemsList.scrollableNew {
+  height: calc(6.5rem + 1.6rem + 6.5rem );  /* Notification height + gap + notification height */
+}
+
+.itemsList.scrollableViewed {
+  height: calc(3rem + 0.5rem + 3rem);  /* Notification height + gap + notification height */
+}
+
+.itemsList.scrollableNew:hover,
+.itemsList.scrollableViewed:hover{
+  overflow-y: auto;
+}
+
+.notificationItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.notificationTop {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.newItem {
+  height: 6.5rem;
+}
+
+.viewedItem {
+  height: 2.5rem;
+}
+
+.iconContainer {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbulbIcon {
+  margin-top: 0.4rem;
+  margin-left: 0.5rem;
+  width: 2.5rem;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 0.25rem;
+  gap: 1rem;
+}
+
+.itemTitle {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-weight: var(--font-weight-body);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-body);
+  letter-spacing: 0.03rem;
+}
+
+.time {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-primary);
+  flex-shrink: 0;
+  font-family: var(--font-family-body);
+  letter-spacing: var(--letter-spacing-body);
+  margin-right: 0.2rem;
+}
+
+.description {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-text-secondary);
+  margin: 0 0 0 0.25rem;
+  font-family: var(--font-family-body);
+  letter-spacing: 0.02rem;
+}
+
+.acceptButton {
+  background: var(--color-button-default);
+  color: var(--color-button-text);
+  border: none;
+  padding: 0.75rem 1.4rem;
+  margin-top: 0.2rem;
+
+  /* margin-left: 0.3rem; */
+  border-radius: 0.75rem;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-weight: var(--font-weight-body);
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.2s;
+  font-family: var(--font-family-body);
+  letter-spacing: var(--letter-spacing-body);
+}
+
+.acceptButton:focus {
+  outline: var(--outline);
+  outline-offset: var(--outline-offset);
+}
+
+.acceptButton:hover {
+  background: var(--color-button-hover);
+}
+
+.acceptButton:active {
+  background: var(--color-button-active);
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 70%;
+    padding: 1rem;
+    max-height: 85vh;
+  }
+  
+  .sectionTitle {
+    font-size: 1rem;
+  }
+}
