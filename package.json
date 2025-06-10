@@ -9,8 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "stylelint": "stylelint '**/*.css'",
-    "stylelint:fix": "stylelint '**/*.css' --fix",
+    "stylelint": "stylelint \"src/**/*.css\"",
+    "stylelint:fix": "stylelint \"src/**/*.css\" --fix",
     "format": "prettier --write ."
   },
   "dependencies": {
