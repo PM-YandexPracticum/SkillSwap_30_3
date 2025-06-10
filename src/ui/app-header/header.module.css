@@ -5,15 +5,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 36px 24px;
-  background-color: #f9fafb;
-  gap: 32px;
+  padding: 2.25rem 2.25rem 1.25rem;
+  background-color: var(--color-overlay);
+  gap: 2rem;
   max-width: 1440px;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
-.iconBlock {
+.logoBlock {
   display: flex;
   height: 100%;
   gap: 1.5rem;
@@ -21,20 +21,16 @@
 
 .menuBlock {
   display: flex;
-  width: 222px;
   align-items: center;
   gap: 1.5rem;
   font-family: var(--font-family-body);
   font-weight: var(--font-weight-body);
+  white-space: nowrap;
 }
 
 .navLink {
   text-decoration: none;
   color: var(--color-button-text);
-}
-
-.navLink:hover {
-  text-decoration: underline;
 }
 
 .skillsToggle {
@@ -43,24 +39,24 @@
   gap: 0.5rem;
   cursor: pointer;
   color: var(--color-button-text);
-  letter-spacing: 0.02rem;
+  letter-spacing: var(--letter-spacing-body);
 }
 
 .searchGuest {
-  width: 527px;
+  width: 32.9375rem;
 }
 
 .searchAuth {
-  width: 648px;
+  width: 40.5rem;
 }
 
 .search {
   display: flex;
   align-items: center;
-  gap: 8px;
-  border-radius: 12px;
-  padding: 12px;
-  background-color: rgb(255 255 255);
+  gap: 0.5rem;
+  border-radius: 0.75rem; 
+  padding: 0.75rem;
+  background-color: var(--color-background);
   font-family: var(--font-family-body);
   font-weight: var(--font-weight-body);
   font-size: var(--font-size-body);
@@ -81,7 +77,6 @@
 .rightBlock {
   display: flex;
   align-items: center;
-  gap: 32px;
 }
 
 .logo {
@@ -92,22 +87,28 @@
 }
 
 .logoIcon {
-    background-color: #ABD27A;
-    border-radius: 9999px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    color: white;
+  background-color: var(--color-accent);
+  border-radius: 9999px;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
 .logoText {
   font-family: var(--font-family-headings);
-  font-size: 1.4rem;
+  font-size: var(--font-size-h2);
   font-weight: var(--font-weight-headings);
-  color: #14532d;
+  color: var(--color-primary);
   letter-spacing: -0.02rem;
   align-self: center;
+}
+
+.iconBlock {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .iconButton {
@@ -132,11 +133,6 @@
   font-weight: var(--font-weight-body);
   font-size: var(--font-size-body);
   transition: background-color 0.2s;
-  letter-spacing: 0.02rem;
-}
-
-.buttonPrimary:hover {
-  background-color: #4ade80;
 }
 
 .buttonOutline {
@@ -158,7 +154,8 @@
 .userBlock {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
+  padding-left: 1.5rem;
 }
 
 .userName {
@@ -168,13 +165,14 @@
 }
 
 .avatar {
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .auth_buttons {
   display: flex;
+  padding-left: 1.4rem;
   gap: 8px;
 }

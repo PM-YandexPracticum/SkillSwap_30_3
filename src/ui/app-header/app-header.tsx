@@ -8,6 +8,8 @@ import { HeaderMenu } from './headerMenu';
 import { HeaderSearch } from './headerSearch';
 import placeholderAvatar from '../../assets/img/test.jpg';
 
+const testName = 'Мария';
+
 type HeaderProps = {
     isAuthenticated: boolean;
     userName?: string;
@@ -33,7 +35,7 @@ export const Header = ({
 }: HeaderProps) => {
     return (
         <header className={styles.header}>
-            <div className={styles.iconBlock}>
+            <div className={styles.logoBlock}>
                 <Logo />
             </div>
 
@@ -46,6 +48,7 @@ export const Header = ({
             </div>
 
             <div className={styles.rightBlock}>
+                <div className={styles.iconBlock}>
                 <IconButton icon="theme" onClick={onThemeToggle} title="Сменить тему" />
 
                 {isAuthenticated && (
@@ -58,11 +61,11 @@ export const Header = ({
                         )}
                     </>
                 )}
-
+                </div>
                 <div className={styles.authButtonsOutside}>
                     {isAuthenticated ? (
                         <div className={styles.userBlock}>
-                            <span className={styles.userName}>{userName}</span>
+                            <span className={styles.userName}>{userName || testName}</span>
                             <img
                                 src={avatarUrl || placeholderAvatar}
                                 className={styles.avatar}
