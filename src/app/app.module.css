@@ -4,4 +4,7 @@
   height: 100vh;
   background-color: white;
   color: black;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
 }
