@@ -1,4 +1,5 @@
 import { FC, memo } from 'react';
+import { Modal } from '../Modal';
 import { NotificationsModalProps, NotificationSectionProps } from './types';
 import styles from './NotificationsModal.module.css';
 import lightbulbIcon from '@shared/assets/icons/lightbulb.png';
@@ -34,7 +35,7 @@ const NotificationSection: FC<NotificationSectionProps> = memo(
               <div className={styles.iconContainer}>
                 <img
                   src={lightbulbIcon}
-                  alt="Иконка уведомления"
+                  alt="Иконка уведомления подтверждения"
                   className={styles.lightbulbIcon}
                 />
               </div>
@@ -65,33 +66,35 @@ export const NotificationsModal: FC<NotificationsModalProps> = memo(
   ({
     notifications,
     viewed,
-    onClose,
+    onClose = () => {},
     onReadAll,
     onClearViewed,
     onGoToNotification,
   }) => {
-    return (
-      <div className={styles.overlay} onClick={onClose}>
-        <div className={styles.modal} onClick={e => e.stopPropagation()}>
-          <NotificationSection
-            title="Новые уведомления"
-            items={notifications}
-            actionText="Прочитать все"
-            onAction={onReadAll}
-            onItemAction={onGoToNotification}
-            itemActionText="Перейти"
-            isViewed={false}
-          />
+    const modalContent = (
+      <div className={styles.modalContent}>
+        <NotificationSection
+          title="Новые уведомления"
+          items={notifications}
+          actionText="Прочитать все"
+          onAction={onReadAll}
+          onItemAction={onGoToNotification}
+          itemActionText="Перейти"
+          isViewed={false}
+        />
 
-          <NotificationSection
-            title="Просмотренные"
-            items={viewed}
-            actionText="Очистить"
-            onAction={onClearViewed}
-            isViewed={true}
-          />
-        </div>
+        <NotificationSection
+          title="Просмотренные"
+          items={viewed}
+          actionText="Очистить"
+          onAction={onClearViewed}
+          isViewed={true}
+        />
       </div>
+    );
+
+    return (
+      <Modal content={modalContent} onClose={onClose} dimBackground={false} />
     );
   }
 );

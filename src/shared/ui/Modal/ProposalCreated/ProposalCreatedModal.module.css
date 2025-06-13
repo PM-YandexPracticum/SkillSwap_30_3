@@ -1,0 +1,84 @@
+@import '@shared/ui/styles/fonts.css';
+@import '@shared/ui/styles/variables.css';
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: .875rem 2.75rem;
+  max-width: 27.35rem;
+  box-sizing: border-box
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  margin-top: 1.2rem;
+  width: 4.875rem;
+  height: 4.875rem;
+  flex-shrink: 0;
+}
+
+.tickIcon {
+  padding-top: 2.7rem;
+  aspect-ratio: 1/1;
+}
+
+.title {
+  margin: 0;
+  padding-top: 4.3rem;
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  font-weight: var(--font-weight-headings);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-headings);
+  letter-spacing: -0.02rem;
+}
+
+.description {
+  margin: .75rem 1.3rem 0;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-body);
+  letter-spacing: 0.02rem;
+}
+
+.doneButton {
+  padding: .75rem 12rem;
+  margin: 2rem 0;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--button-border-radius);
+  background: var(--color-button-default);
+  color: var(--color-button-text);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-weight: var(--font-weight-body);
+  font-family: var(--font-family-body);
+  transition: var(--button-transition);
+  letter-spacing: var(--letter-spacing-body);
+}
+
+.doneButton:disabled {
+  background: var(--color-button-disabled);
+  color: var(--color-button-text-disabled);
+  cursor: not-allowed;
+}
+
+.doneButton:hover {
+  background: var(--color-button-hover);
+}
+
+.doneButton:focus {
+  outline: var(--outline);
+  outline-offset: var(--outline-offset);
+}
+
+.doneButton:active {
+  background: var(--color-button-active);
+}
