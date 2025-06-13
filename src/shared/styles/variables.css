@@ -5,7 +5,10 @@
   --color-button-active: #508826;
   --color-button-text: #253017;
   --color-text-primary: #1f2937;
+  --color-text-caption: #69735d;
   --color-text-secondary: #6b7280;
+  --color-button-disabled: #e4e8df;
+  --color-button-text-disabled: #9ca197;
   --color-background: white;
   --color-overlay: rgb(255 255 255 / 100%);
   --font-size-h2: 1.5rem;
@@ -18,9 +21,12 @@
   --line-height-small: 1rem;
   --font-family-headings: 'Jost', sans-serif;
   --font-family-body: 'Roboto', sans-serif;
+  --font-family-inter: 'Inter', sans-serif;
   --letter-spacing-body: 0.055rem;
   --font-weight-headings: 500;
   --font-weight-body: 400;
   --outline: 0.15rem dashed var(--color-button-active);
   --outline-offset: -0.15rem;
+  --button-transition: background-color 0.2s;
+  --button-border-radius: 0.75rem;
 }

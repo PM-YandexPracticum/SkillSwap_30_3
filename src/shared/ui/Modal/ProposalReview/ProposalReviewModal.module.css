@@ -1,0 +1,225 @@
+@import '@shared/ui/styles/fonts.css';
+@import '@shared/ui/styles/variables.css';
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 2rem 3.25rem;
+  max-width: 62rem;
+  width: 100%;
+  gap: 0.5rem;
+  box-sizing: border-box
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.modalTitle {
+  margin: 0 0 0.5rem;
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  font-weight: var(--font-weight-headings);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-headings);
+  letter-spacing: -0.02rem;
+}
+
+.modalSubtitle {
+  margin: 0;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-body);
+  letter-spacing: 0.015rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2.75rem;
+  align-items: start;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  flex: 0;
+}
+
+.title {
+  margin: 0 0 0.3rem 0.78rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: var(--font-weight-headings);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-headings);
+  letter-spacing: -0.025rem;
+}
+
+.category {
+  margin: 0 0 1rem 0.75rem;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-text-caption);
+  font-family: var(--font-family-body);
+  letter-spacing: 0.02rem;
+}
+
+.description {
+  margin: 0.2rem 1.5rem 2rem 0.8rem;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-body);
+  letter-spacing: 0.02rem;
+  text-align: left;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.25rem;
+}
+
+.editButton {
+  padding: 0.67rem 1.8rem;
+  margin-left: 0.75rem;
+  cursor: pointer;
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--button-border-radius);
+  background: transparent;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-weight: var(--font-weight-body);
+  font-family: var(--font-family-body);
+  transition: var(--button-transition);
+  letter-spacing: 0.025rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.editIcon {
+  width: 1rem;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+
+.editButton:disabled {
+  background: var(--color-button-disabled);
+  color: var(--color-button-text-disabled);
+  cursor: not-allowed;
+}
+
+.editButton:hover {
+  background: var(--color-button-hover);
+  border-color: var(--color-button-hover);
+}
+
+.editButton:focus {
+  outline: var(--outline);
+  outline-offset: var(--outline-offset);
+}
+
+.doneButton {
+  padding: 0.67rem 4.615rem;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--button-border-radius);
+  background: var(--color-button-default);
+  color: var(--color-button-text);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-weight: var(--font-weight-body);
+  font-family: var(--font-family-body);
+  transition: var(--button-transition);
+  letter-spacing: var(--letter-spacing-body);
+}
+
+.doneButton:disabled {
+  background: var(--color-button-disabled);
+  color: var(--color-button-text-disabled);
+  cursor: not-allowed;
+}
+
+.doneButton:hover {
+  background: var(--color-button-hover);
+}
+
+.doneButton:focus {
+  outline: var(--outline);
+  outline-offset: var(--outline-offset);
+}
+
+.doneButton:active {
+  background: var(--color-button-active);
+}
+
+.imageGallery {
+  display: grid;
+  grid-template-columns: 20.25rem 5.75rem;
+  gap: 1.5rem;
+  width: 30rem;
+  flex: 1;
+}
+
+.mainImageWrapper {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--button-border-radius);
+  overflow: hidden;
+}
+
+.mainImage {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.sideImagesWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1.25rem;
+}
+
+.sideImageWrapper {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--button-border-radius);
+  flex: 1;
+}
+
+.sideImage {
+  width: 5.75rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--button-border-radius);
+  overflow: hidden;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  aspect-ratio: 1;
+  border-radius: var(--button-border-radius);
+  overflow: hidden;
+  background: rgb(255 255 255 / 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remainingCount {
+  color: var(--color-button-text);
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+  font-weight: var(--font-weight-body);
+  font-family: var(--font-family-inter);
+}
