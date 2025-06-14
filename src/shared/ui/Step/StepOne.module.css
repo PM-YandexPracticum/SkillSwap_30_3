@@ -1,0 +1,97 @@
+.stepOne {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 0.875rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #253017;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.orDivider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: #253017;
+}
+
+.orDivider::before,
+.orDivider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 0.0625rem solid #e9ecef;
+}
+
+.orDivider span {
+  font-size: 0.875rem;
+}
+
+.formField {
+  margin-top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.formField label {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.passwordInputContainer .inputField {
+  width: 100%;
+  padding-right: 2.5rem;
+}
+
+.smallText {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.errorText {
+  color: #e53935;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  text-align: left;
+}
+
+.passwordInputWrapper {
+  position: relative;
+  align-items: center;
+}
+
+.eyeButton {
+  position: absolute;
+  right: 1.6875rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  z-index: 2;
+}
