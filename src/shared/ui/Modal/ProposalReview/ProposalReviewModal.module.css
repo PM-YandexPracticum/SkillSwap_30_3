@@ -1,5 +1,5 @@
-@import '@shared/ui/styles/fonts.css';
-@import '@shared/ui/styles/variables.css';
+@import '@shared/styles/fonts.css';
+@import '@shared/styles/variables.css';
 
 .modalContent {
   display: flex;
