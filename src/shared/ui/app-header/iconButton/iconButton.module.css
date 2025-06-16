@@ -1,0 +1,13 @@
+@import '../../../style/variables.css';
+
+.iconButton {
+    font-size: 1.25rem;
+    padding: 0.25rem 0.5rem;
+    transition: opacity 0.2s;
+    background-color: transparent;
+    border: none;
+}
+
+.iconButton:hover {
+    opacity: 0.8;
+}
