@@ -1,28 +1,14 @@
 import React from 'react';
 import { Button } from '@/shared/ui/Button/Button';
-import { InputField } from '../Input/Input';
+import { InputField } from '../../Input/Input';
+import { StepOneProps } from './type';
 import styles from './StepOne.module.css';
-import GoogleIcon from '../../assets/icons/google.svg';
-import AppleIcon from '../../assets/icons/apple.svg';
+import GoogleIcon from '@shared/assets/icons/google.svg';
+import AppleIcon from '@shared/assets/icons/apple.svg';
 import EyeSlashIcon from '@shared/assets/icons/eyeSlash.svg';
 import EyeIcon from '@shared/assets/icons/eye.svg';
 
-interface StepOneProps {
-  formData: {
-    email: string;
-    password: string;
-  };
-  errors: {
-    email?: string;
-    password?: string;
-  };
-  onInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onNext: () => void;
-  isPasswordVisible: boolean;
-  togglePasswordVisibility: () => void;
-}
-
-export const StepOne: React.FC<StepOneProps> = ({
+const StepOneComponent: React.FC<StepOneProps> = ({
   formData,
   errors,
   onInputChange,
@@ -34,11 +20,11 @@ export const StepOne: React.FC<StepOneProps> = ({
     <div className={styles.stepOne}>
       <div className={styles.socialButtons}>
         <Button variant="google" onClick={() => alert('Login with Google')}>
-          <img src={GoogleIcon} alt="Google logo" />
+          <img src={GoogleIcon} alt="Google logo" loading="lazy" />
           Продолжить с Google
         </Button>
         <Button variant="apple" onClick={() => alert('Login with Apple')}>
-          <img src={AppleIcon} alt="Apple logo" />
+          <img src={AppleIcon} alt="Apple logo" loading="lazy" />
           Продолжить с Apple
         </Button>
       </div>
@@ -97,10 +83,10 @@ export const StepOne: React.FC<StepOneProps> = ({
           <p className={styles.errorText}>{errors.password}</p>
         )}
       </div>
-
       <Button variant="submit" onClick={onNext}>
         Далее
       </Button>
     </div>
   );
 };
+export const StepOne = React.memo(StepOneComponent);

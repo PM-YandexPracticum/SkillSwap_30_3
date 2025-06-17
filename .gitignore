@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+cities.json
+skills.json
+users.json
+package-lock.json

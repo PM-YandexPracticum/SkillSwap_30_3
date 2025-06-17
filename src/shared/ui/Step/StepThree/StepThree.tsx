@@ -1,35 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/shared/ui/Button/Button';
-import { InputField } from '../Input/Input';
+import { InputField } from '../../Input/Input';
 import styles from './StepThree.module.css';
-import loadImg from '../../assets/icons/loadImg.svg';
+import loadImg from '@shared/assets/icons/loadImg.svg';
 import { TCategory, TSubcategory, TSkill } from '@shared/lib/db/skills/types';
 import { readAllCategories } from '@shared/lib/db/skills/utils';
+import { StepThreeFormProps } from './type';
 
-type StepThreeErrors = Partial<
-  Record<'skillName' | 'category' | 'subcategory' | 'description', string>
->;
-
-interface StepThreeFormProps {
-  formData: {
-    skillName: string;
-    category: string;
-    subcategory: string;
-    description: string;
-    skillImage: File | null;
-  };
-  errors: StepThreeErrors;
-  onInputChange: (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
-  ) => void;
-  onFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onNext: () => void;
-  onPrev: () => void;
-}
-
-export const StepThreeForm: React.FC<StepThreeFormProps> = ({
+const StepThreeComponent: React.FC<StepThreeFormProps> = ({
   formData,
   errors,
   onInputChange,
@@ -41,7 +19,7 @@ export const StepThreeForm: React.FC<StepThreeFormProps> = ({
   const [availableSubcategories, setAvailableSubcategories] = useState<
     TSubcategory[]
   >([]);
-  const [availableSkills, setAvailableSkills] = useState<TSkill[]>([]);
+  const [, setAvailableSkills] = useState<TSkill[]>([]);
 
   //загрузка категории при монтировании компонента
   useEffect(() => {
@@ -188,7 +166,11 @@ export const StepThreeForm: React.FC<StepThreeFormProps> = ({
             </span>
             <button type="button" className={styles.selectImageButton}>
               <span className={styles.folderIcon}></span>
-              <img src={loadImg} alt="Изображение загрузки"></img>
+              <img
+                src={loadImg}
+                alt="Изображение загрузки"
+                loading="lazy"
+              ></img>
               Выбрать изображения
             </button>
             {formData.skillImage && (
@@ -211,3 +193,5 @@ export const StepThreeForm: React.FC<StepThreeFormProps> = ({
     </div>
   );
 };
+
+export const StepThreeForm = React.memo(StepThreeComponent);

@@ -1,35 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/shared/ui/Button/Button';
-import { InputField } from '../Input/Input';
+import { InputField } from '../../Input/Input';
 import styles from './StepTwo.module.css';
-import photo from '../../assets/icons/photo.svg';
+import photo from '@shared/assets/icons/photo.svg';
 import { TCity } from '@shared/lib/db/cities/types';
 import { readAllCities } from '@shared/lib/db/cities/utils';
 import { TCategory, TSubcategory } from '@shared/lib/db/skills/types';
 import { readAllCategories } from '@shared/lib/db/skills/utils';
+import { StepTwoFormProps } from './type';
 
-type StepTwoErrors = Partial<
-  Record<'name' | 'city' | 'categoryToLearn' | 'subcategoryToLearn', string>
->;
-
-interface StepTwoFormProps {
-  formData: {
-    name: string;
-    birthDate: string;
-    gender: string;
-    city: string;
-    categoryToLearn: string;
-    subcategoryToLearn: string;
-  };
-  errors: StepTwoErrors;
-  onInputChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => void;
-  onNext: () => void;
-  onPrev: () => void;
-}
-
-export const StepTwoForm: React.FC<StepTwoFormProps> = ({
+const StepTwoComponent: React.FC<StepTwoFormProps> = ({
   formData,
   errors,
   onInputChange,
@@ -84,7 +64,7 @@ export const StepTwoForm: React.FC<StepTwoFormProps> = ({
   return (
     <div className={styles.stepTwoForm}>
       <div className={styles.profileIcon}>
-        <img src={photo} alt="Иконка профиля" />
+        <img src={photo} alt="Иконка профиля" loading="lazy" />
       </div>
 
       <div className={styles.formField}>
@@ -206,3 +186,5 @@ export const StepTwoForm: React.FC<StepTwoFormProps> = ({
     </div>
   );
 };
+
+export const StepTwoForm = React.memo(StepTwoComponent);
