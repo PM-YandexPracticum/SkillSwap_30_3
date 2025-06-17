@@ -1,0 +1,26 @@
+@import '../../../style/variables.css';
+
+.menuBlock {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: var(--font-family-body);
+    font-weight: var(--font-weight-body);
+    white-space: nowrap;
+}
+
+.navLink {
+    text-decoration: none;
+    color: var(--color-button-text);
+    letter-spacing: var(--letter-spacing-header);
+}
+
+.skillsToggle {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: var(--color-button-text);
+    letter-spacing: var(--letter-spacing-header);
+}
