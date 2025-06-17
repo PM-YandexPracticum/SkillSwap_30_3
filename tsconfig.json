@@ -25,7 +25,7 @@
       "@pages/*": ["pages/*"],
       "@widgets/*": ["widgets/*"]
     },
-    "types": ["vite/client", "jest", "@testing-library/jest-dom"]
+    "types": ["vite/client"]
   },
   "include": ["src", "jest.config.ts"]
 }

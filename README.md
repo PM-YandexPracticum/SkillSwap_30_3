@@ -7,8 +7,8 @@
 
 ## ⚙️ Технологии
 
-- **Frontend**: React 18, TypeScript, Vite, CSS-modules   
-- **Линтинг**: ESLint (+ Airbnb), Prettier, Stylelint  
+- **Frontend**: React 18, TypeScript, Vite, CSS-modules
+- **Линтинг**: ESLint (+ Airbnb), Prettier, Stylelint
 
 ---
 
@@ -26,7 +26,7 @@ npm install
 # или
 yarn install
 
-#Запуск проекта 
+#Запуск проекта
 npm run dev
 
 #Production сборка
@@ -40,3 +40,4 @@ npm run lint:fix
 
 # Форматирование кода
 npm run format
+```
