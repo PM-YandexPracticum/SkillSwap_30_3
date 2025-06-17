@@ -1,0 +1,7 @@
+@import '../../../style/variables.css';
+
+.auth_buttons {
+    display: flex;
+    padding-left: 1.2rem;
+    gap: 8px;
+}
