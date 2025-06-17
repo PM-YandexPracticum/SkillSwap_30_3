@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './app.module.css';
 import { RegistrationPage } from '@/pages/RegistrationPage/RegistrationPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -20,3 +21,4 @@ const App = () => {
 };
 
 export default App;
+
