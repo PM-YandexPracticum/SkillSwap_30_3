@@ -140,7 +140,7 @@
 }
 
 .doneButton:disabled {
-  background: var(--color-button-disabled);
+  background: var(--color-button-disabled-modal);
   color: var(--color-button-text-disabled);
   cursor: not-allowed;
 }

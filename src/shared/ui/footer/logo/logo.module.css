@@ -1,4 +1,4 @@
-@import '../../style/variables.css';
+@import '@shared/styles/variables.css';
 
 .logo {
     display: flex;

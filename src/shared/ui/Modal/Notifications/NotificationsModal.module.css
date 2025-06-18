@@ -52,7 +52,7 @@
 }
 
 .actionButton:disabled {
-  background: var(--color-button-disabled);
+  background: var(--color-button-disabled-modal);
   color: var(--color-button-text-disabled);
   cursor: not-allowed;
 }
@@ -192,7 +192,7 @@
 }
 
 .acceptButton:disabled {
-  background: var(--color-button-disabled);
+  background: var(--color-button-disabled-modal);
   color: var(--color-button-text-disabled);
   cursor: not-allowed;
 }

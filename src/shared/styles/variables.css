@@ -1,16 +1,31 @@
 :root {
+  /* Colors */
   --color-primary: #508826;
+  --color-accent: #ABD27A;
   --color-button-default: #abd27a;
   --color-button-hover: #deebc5;
   --color-button-active: #508826;
   --color-button-text: #253017;
-  --color-text-primary: #1f2937;
-  --color-text-caption: #69735d;
-  --color-text-secondary: #6b7280;
-  --color-button-disabled: #e4e8df;
   --color-button-text-disabled: #9ca197;
+  --color-button-disabled-modal: #e4e8df;
+  --color-button-disabled: #69735D;
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-text-third: #69735D;
+  --color-text-caption: #69735d;
   --color-background: white;
   --color-overlay: rgb(255 255 255 / 100%);
+  --color-page: #F9FAF7;
+  --copyright-color: #69735d;
+
+  /* Typography */
+  --font-family-headings: 'Jost', sans-serif;
+  --font-family-body: 'Roboto', sans-serif;
+  --font-family-buttons: 'Roboto', sans-serif;
+  --font-family-title: 'Jost', sans-serif;
+  --font-family-card: 'OpenSans', sans-serif;
+  --font-family-teg: 'Roboto-Medium', sans-serif;
+  --font-family-inter: 'Inter', sans-serif;
   --font-size-h2: 1.5rem;
   --line-height-h2: 1.75rem;
   --font-size-h4: 1rem;
@@ -19,14 +34,28 @@
   --line-height-body: 1.5rem;
   --font-size-small: 0.75rem;
   --line-height-small: 1rem;
-  --font-family-headings: 'Jost', sans-serif;
-  --font-family-body: 'Roboto', sans-serif;
-  --font-family-inter: 'Inter', sans-serif;
   --letter-spacing-body: 0.055rem;
+  --letter-spacing-header: 0.02em;
   --font-weight-headings: 500;
   --font-weight-body: 400;
+  --font-weight-title: 600;
+  --font-weight-header: 600;
+
+  /* UI helpers */
   --outline: 0.15rem dashed var(--color-button-active);
   --outline-offset: -0.15rem;
   --button-transition: background-color 0.2s;
   --button-border-radius: 0.75rem;
+
+  /* Tag Backgrounds */
+  --background-teg-foreignlang: #EBE5C5;
+  --background-teg-education: #E7F2F6;
+  --background-teg-health: #E9F7E7;
+  --background-teg-business: #EEE7F7;
+  --background-teg-art: #F7E7F2;
+  --background-teg-house: #F7EBE5;
+  --background-teg-more: #E8ECF7;
+
+  /* Other */
+  --background-button-disabled: #E4E8DF;
 }
