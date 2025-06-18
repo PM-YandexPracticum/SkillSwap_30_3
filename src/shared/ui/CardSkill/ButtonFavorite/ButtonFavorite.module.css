@@ -1,0 +1,37 @@
+@import '@shared/ui/styles/fonts.css';
+@import '@shared/ui/styles/variables.css';
+
+.button_favorite {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  background-image: url('./../../../assets/images/likeIcon.svg');
+  background-repeat: no-repeat;
+  width: 1.25rem;
+  height: 1.1875rem;
+  background-position: center;
+  background-size: contain;
+  transition: background-image 0.2s ease;
+}
+
+.button_favorite.active {
+  background-image: url('./../../../assets/images/likeIconActive.svg');
+  background-repeat: no-repeat;
+  width: 1.25rem;
+  height: 1.1875rem;
+  background-size: contain;
+}
+
+.button_favorite:focus {
+  outline: none;
+}
+
+.button_favorite:focus-visible {
+  outline: var(--outline);
+  outline-offset: var(--outline-offset);
+}

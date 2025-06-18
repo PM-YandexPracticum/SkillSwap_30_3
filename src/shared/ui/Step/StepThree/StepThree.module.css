@@ -1,0 +1,138 @@
+.stepThreeForm {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.selectField {
+  width: 100%;
+  padding: 0.75rem 1.1875rem;
+  border: 0.0625rem solid #ced4da;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  background-repeat: no-repeat;
+  appearance: none;
+  background-position: right 0.75rem center;
+  background-size: 0.75rem;
+  letter-spacing: 0.03125rem;
+  padding-bottom: 0.3125rem;
+  background-image:url('../../../assets/icons/arrow-down.svg');
+  background-size: 2.75rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.selectField:focus {
+  outline: none;
+  border-color: #58cc02;
+  box-shadow: 0 0 0 0.1875rem rgba(88, 204, 2, 0.15);
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2.1875rem;
+  line-height: 1.5rem;
+}
+
+.formField {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.375rem;
+}
+
+.formField label {
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.03125rem;
+}
+
+.inlineFields .formField {
+  margin-bottom: 0;
+}
+
+.errorText {
+  color: #e53935;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  text-align: left;
+}
+
+.textAreaField {
+  width: 100%;
+  padding: 0.75rem;
+  padding-left: 0.9375rem;
+  border: 0.0625rem solid #ced4da;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  min-height: 6rem;
+  resize: none;
+}
+
+.textAreaField::placeholder {
+  color: #a0a7ad;
+}
+
+.textAreaField:focus {
+  outline: none;
+  border-color: #58cc02;
+  box-shadow: 0 0 0 0.1875rem rgba(88, 204, 2, 0.15);
+}
+
+.fileUploadContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0.0625rem dashed #69735d;
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  height: 5.625rem;
+  transition: border-color 0.3s ease;
+  background-color: #f8f9fa;
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dragDropText {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  position: relative;
+  top: 0.9375rem;
+  color: #6c757d;
+}
+
+.selectImageButton {
+  background-color: transparent;
+  border: none;
+  color: #508826;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  position: relative;
+  right: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.fileName {
+  font-size: 0.875rem;
+  color: #343a40;
+}

@@ -1,0 +1,54 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0%);
+  z-index: 2;
+}
+
+.modal {
+  background-color: var(--color-background);
+  border-radius: 0.75rem; /* 12px */
+  border: 1px solid var(--color-caption);
+  padding: 3.75rem; /* 60px */
+  width: clamp(55rem, 80vw, 71rem);
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+}
+
+.modalVisible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal.compact {
+  width: fit-content;
+  max-width: 90vw;
+  padding: 2.5rem;
+}
+
+.emptyMessage {
+  color: var(--color-button-text);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem; /* 40px */
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* 40px */
+  flex: 1 1 0;
+  min-width: 0;
+}

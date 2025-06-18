@@ -18,5 +18,5 @@ export type CardPersonInfo = {
   gender: string;
   images?: string[];
   skillCanTeach: TSkillCanTeach;
-  skillsWantToLearn: TCategoryWantToLearn[];
+  subcategoriesWantToLearn: TCategoryWantToLearn[];
 };

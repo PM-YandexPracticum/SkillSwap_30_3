@@ -27,5 +27,5 @@
     },
     "types": ["vite/client"]
   },
-  "include": ["src"]
+  "include": ["src", "jest.config.ts"]
 }
