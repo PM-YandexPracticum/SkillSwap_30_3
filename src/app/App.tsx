@@ -1,6 +1,6 @@
 import styles from './app.module.css';
 import { Footer } from '@/shared/ui/footer/footer';
-import { ClickHandler } from '@/types/common';
+import { ClickHandler } from '../../src/shared/ui/footer';
 
 const App = () => {
    const handleAbout: ClickHandler = () => {
@@ -35,7 +35,7 @@ const App = () => {
       onSkilsClick={handleSkils}
       onContactClick={handleContacts}
       onBlogClick={handleBlog}
-      onPrivicyClick={handlePrivicy}
+      onPrivacyClick={handlePrivicy}
       onAgreementClick={handleAgreement}/>
     </div>
   );

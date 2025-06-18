@@ -1,51 +1,57 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styles from './Footer.module.css';
-import { AboutNavItem, SkillsNavItem } from './mainNavLink';
-import { Logo } from './logo';
-import { ClickHandler } from '@/types/common';
+import { Logo } from './logo/logo';
+import { footerProps } from './types';
+import { NavItem } from './navItem';
 
-type footerProps = {
-  onAboutClick?: ClickHandler;
-  onSkilsClick?: ClickHandler;
-  onContactClick?: ClickHandler;
-  onBlogClick?: ClickHandler;
-  onPrivicyClick?: ClickHandler;
-  onAgreementClick?: ClickHandler;
-}
+import { Link } from 'react-router-dom';
 
-export const Footer = ({
+export const Footer: React.FC<footerProps> = React.memo(({
   onAboutClick,
   onSkilsClick,
   onContactClick,
   onBlogClick,
-  onPrivicyClick,
+  onPrivacyClick,
   onAgreementClick
 }: footerProps) => {
+  const handleClick = useCallback((e: React.MouseEvent, callback?: () => void) => {
+    e.preventDefault();
+    callback?.();
+  }, []);
+
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} aria-label="Подвал">
       <div className={styles.logoBlock}>
         <Logo />
       </div>
       <div className={styles.container}>
         <ul className={styles.buttons_list}>
-          <AboutNavItem  onClick={onAboutClick}/>
-          <SkillsNavItem onClick={onSkilsClick} />
+          <NavItem href="#" title="О проекте" onClick={(e) => handleClick(e, onAboutClick)} />
+          <NavItem href="#" title="Все навыки" onClick={(e) => handleClick(e, onSkilsClick)} />
         </ul>
         <ul className={styles.buttons_list}>
           <li className={styles.item}>
-            <a href="#" onClick={onContactClick}>Контакты</a>
+            <Link to="#" onClick={(e) => handleClick(e, onContactClick)}>
+              Контакты
+            </Link>
           </li>
           <li className={styles.item}>
-            <a href="#" onClick={onBlogClick}>Блог</a>
+            <Link to="#" onClick={(e) => handleClick(e, onBlogClick)}>
+              Блог
+            </Link>
           </li>
         </ul>
 
         <ul className={styles.buttons_list}>
           <li className={styles.item}>
-            <a href="#" onClick={onPrivicyClick}>Политика конфиденциальности</a>
+            <Link to="#" onClick={(e) => handleClick(e, onPrivacyClick)}>
+              Политика конфиденциальности
+            </Link>
           </li>
           <li className={styles.item}>
-            <a href="#" onClick={onAgreementClick}>Пользовательское соглашение</a>
+            <Link to="#" onClick={(e) => handleClick(e, onAgreementClick)}>
+              Пользовательское соглашение
+            </Link>
           </li>
         </ul>
       </div>
@@ -53,5 +59,4 @@ export const Footer = ({
         <p>SkillSwap — 2025</p>
       </div>
     </footer>
-  );
-};
+);});
