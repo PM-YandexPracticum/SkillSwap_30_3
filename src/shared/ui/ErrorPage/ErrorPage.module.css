@@ -9,10 +9,7 @@
   padding: 2rem;
   background-color: var(--color-background);
   text-align: center;
-
-  /* Возможно понадобится корректировка по min-height после подключения хедера и футера */
-
-  /* min-height: 100vh; */
+  min-height: 62vh;
 }
 
 .errorImage {

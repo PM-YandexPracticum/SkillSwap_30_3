@@ -1,0 +1,26 @@
+@import '@shared/styles/variables.css';
+
+.logo {
+    display: flex;
+    gap: 0.5rem;
+    cursor: pointer;
+    align-items: center;
+}
+
+.logoIcon {
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.logoText {
+    font-family: var(--font-family-headings);
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-header);
+    color: var(--color-button-text);
+    letter-spacing: -0.011em;
+}

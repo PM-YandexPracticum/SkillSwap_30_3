@@ -1,4 +1,5 @@
-@import '../../../style/variables.css';
+@import '@shared/styles/fonts.css';
+@import '@shared/styles/variables.css';
 
 .menuBlock {
     display: flex;

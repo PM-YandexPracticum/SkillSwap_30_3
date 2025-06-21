@@ -1,0 +1,40 @@
+@import '@shared/styles/fonts.css';
+@import '@shared/styles/variables.css';
+
+.button_details {
+  margin: 0;
+  background: var(--color-button-default);
+  color: var(--color-button-text);
+  cursor: pointer;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.4rem;
+  font-size: var(--font-size-body);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  transition: background-color 0.2s;
+  letter-spacing: var(--letter-spacing-body);
+}
+
+.button_details-disabled {
+  background-color: var(--background-button-disabled);
+  color: var(--color-button-disabled);
+}
+
+.button_details:focus {
+  outline: none;
+}
+
+.button_details:focus-visible {
+  outline: var(--outline);
+  outline-offset: var(--outline-offset);
+}
+
+.button_details:hover {
+  background: var(--color-button-hover);
+}
+
+.button_details:active {
+  background: var(--color-button-active);
+}

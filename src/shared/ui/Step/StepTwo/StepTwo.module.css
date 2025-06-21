@@ -1,0 +1,106 @@
+.stepTwoForm {
+  margin: 0 auto;
+  width: 100%;
+  min-width: 27.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileIcon {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 1.375rem;
+  height: 4.5rem;
+}
+
+.profileIcon img {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  padding: 0.3125rem;
+}
+
+.formField {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.formField label {
+  margin-bottom: 0.25rem;
+}
+
+input[type='text'],
+input[type='date'],
+.selectField,
+select {
+  width: 100%;
+  height: 3rem;
+  padding: 0.625rem 1rem;
+  border: 0.0625rem solid #69735d;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  color: #212529;
+}
+
+.selectField {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%23253017' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 2.125rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.selectField:focus,
+input[type='text']:focus,
+input[type='date']:focus,
+select:focus {
+  outline: none;
+  border-color: #58cc02;
+  box-shadow: 0 0 0 0.1875rem rgba(88, 204, 2, 0.15);
+}
+
+.inlineFields {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  height: 100%;
+  max-height: 4.75rem;
+}
+
+.errorText {
+  color: #e53935;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  text-align: left;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.25rem;
+  padding-top: 1.375rem;
+}
+
+.modalActions button {
+  height: 3rem;
+  font-size: 1rem;
+  padding: 0 1.5rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+
+.modalActions .backButton {
+  background: white;
+  color: #69735d;
+  border: 0.0625rem solid #cdd4c1;
+}
+
+.modalActions .nextButton {
+  background: #b3dc6c;
+  color: #212529;
+}

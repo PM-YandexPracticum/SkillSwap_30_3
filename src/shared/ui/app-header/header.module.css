@@ -1,5 +1,6 @@
-@import '../../style/reset.css';
-@import '../../style/variables.css';
+@import '@shared/styles/fonts.css';
+@import '@shared/styles/reset.css';
+@import '@shared/styles/variables.css';
 
 .header {
   display: flex;

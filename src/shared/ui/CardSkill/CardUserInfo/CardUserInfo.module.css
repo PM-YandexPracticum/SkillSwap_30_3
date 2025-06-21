@@ -1,0 +1,128 @@
+@import '@shared/styles/fonts.css';
+@import '@shared/styles/variables.css';
+
+.block_userInfo {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.avatar_user {
+  border-radius: 50%;
+  width: 6.25rem;
+  height: 6.25rem;
+  object-fit: cover;
+}
+
+.user_name {
+  padding: 0;
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: var(--line-height-body);
+  color: var(--color-button-text);
+  font-family: var(--font-family-card);
+  font-weight: 600;
+  letter-spacing: -0.011rem;
+  margin-bottom: 0.25rem;
+}
+
+.user_details {
+  padding: 0;
+  margin: 0;
+  color: var(--color-button-text);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-body);
+  font-size: var(--font-size-small);
+  line-height: 1rem;
+  letter-spacing: 0.02rem;;
+}
+
+.skills_canTeach {
+  margin-bottom: 0.75rem;
+}
+
+.tags_title {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-family-teg);
+  letter-spacing: 0.02rem;
+  color: var(--color-button-text);
+  font-weight: var(--font-weight-headings);
+  line-height: var(--line-height-body);
+  font-size: var(--font-size-body);
+  text-align: left;
+}
+
+.skill_tags {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.skill_tag {
+  margin: 0;
+  font-size: var(--font-size-small);
+  color: var(--color-button-text);
+  font-family: var(--font-family-body);
+  letter-spacing: 0.02rem;;
+  font-weight: var(--font-weight-body);
+  line-height: 1rem;
+  border-radius: 1.25rem;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--background-teg-art);
+}
+
+.skill_tageducation {
+  background-color: var(--background-teg-education);
+}
+
+.skill_tagforeignlang {
+  background-color: var(--background-teg-foreignlang);
+}
+
+.skill_taghealth {
+  background-color: var(--background-teg-health);
+}
+
+.skill_tagbusiness {
+  background-color: var(--background-teg-business);
+}
+
+.skill_tagart {
+  background-color: var(--background-teg-art);
+}
+
+.skill_taghouse {
+  background-color: var(--background-teg-house);
+}
+
+.skill_tagMore {
+  margin: 0;
+  background-color: var(--background-teg-more);
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-small);
+  color: var(--color-button-text);
+  font-family: var(--font-family-body);
+  letter-spacing: 0.02rem;;
+  font-weight: var(--font-weight-body);
+  line-height: 1rem;
+  border-radius: 1.25rem;
+  padding: 0.5rem 0.75rem
+}
+
+.skill_tagMore:focus {
+  outline: none;
+}
+
+.skill_tagMore:focus-visible {
+  outline: var(--outline);
+  outline-offset: var(--outline-offset);
+}
+
+.skill_tagMore:hover,
+.skill_tagMore:active {
+  background-color: #c9d0e9;
+}

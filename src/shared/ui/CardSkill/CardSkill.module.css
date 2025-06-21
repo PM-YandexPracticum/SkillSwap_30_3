@@ -1,0 +1,21 @@
+@import '@shared/styles/fonts.css';
+@import '@shared/styles/variables.css';
+
+.container_card {
+  background-color: var(--color-background);
+  display: flex;
+  gap: 1.25rem;
+  border-radius: 0.75rem;
+  width: clamp(16rem, 90vw, 20.25rem);
+  padding: 1.25rem;
+  box-sizing: border-box;
+  flex-flow: column wrap;
+}
+
+.container_cardInfo {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
