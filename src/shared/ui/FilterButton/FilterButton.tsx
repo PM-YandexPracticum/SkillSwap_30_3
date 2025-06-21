@@ -11,7 +11,7 @@ export const FilterButtonUI: FC<TFilterButtonUIProps> = memo(
         onClick={onClick}>
         <p className={styles.title}>{title}</p>
         {icon &&
-          <img src={icon} alt={title} className={styles.arrow} />
+          <img src={icon} alt={title} className={styles.icon} loading="lazy"/>
         }
       </button>
     );

@@ -20,6 +20,7 @@ export const CheckboxUI: FC<TCheckboxUIProps> = memo(
           value={value}
           onChange={onChange}
           checked={checked}
+          title={title}
         />
         <label className={styles.label} htmlFor={inputId}>
           {title}
