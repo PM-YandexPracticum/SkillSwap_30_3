@@ -6,8 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  background-color: var(--color-background);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
   text-align: center;
   min-height: 62vh;
 }
@@ -15,7 +14,7 @@
 .errorImage {
   width: 28.75rem;
   max-width: 100%;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.6rem;
 }
 
 .title {
@@ -35,7 +34,7 @@
   color: var(--color-text-secondary);
   margin-top: 0.25rem;
   margin-bottom: 2.125rem;
-  max-width: 27rem;
+  max-width: 26rem;
   letter-spacing: 0.02rem;
 }
 
@@ -44,6 +43,7 @@
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 0.5rem;
 }
 
 .button {
@@ -77,7 +77,7 @@
 
 .secondaryButton {
   background-color: transparent;
-  border: 1px solid var(--color-text-secondary);
+  border: 1px solid var(--color-accent);
 }
 
 .secondaryButton:hover {
