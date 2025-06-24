@@ -5,7 +5,10 @@
   flex-direction: column;
   min-block-size: 14.5rem;
   box-sizing: border-box;
-  padding-top: 1.9rem;
+  padding-top: 1.75rem;
+  padding-left: 1.9rem;
+  width: 100vw;
+  background-color: var(--color-background);
 }
 
 .container {
@@ -25,16 +28,15 @@
 
 .buttons_list:nth-child(1) {
   justify-self: end;
-  padding-right: 1rem;
+  letter-spacing: 0.02rem;
   list-style: disc;
 }
 
 .buttons_list:nth-child(2) {
-  padding-left: 2.4rem;
+  padding-left: 4.2rem;
 }
 
 .buttons_list:nth-child(3) {
-  padding-right: 3.4rem;
   letter-spacing: 0.02rem;
 }
 
@@ -48,6 +50,7 @@
   text-align: left;
   color: var(--color-text-caption);
   font-size: 0.75rem;
+  letter-spacing: 0.02rem;
 }
 
 a {
