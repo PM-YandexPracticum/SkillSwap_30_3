@@ -6,7 +6,7 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-const Layout = ({ children }: LayoutProps) => (
+const PageLayoutConector = ({ children }: LayoutProps) => (
   <>
     <AppHeaderConnector />
     <main>{children}</main>
@@ -14,6 +14,4 @@ const Layout = ({ children }: LayoutProps) => (
   </>
 );
 
-export default Layout;
-
-// заглушка до появления конектора 
+export default PageLayoutConector ;

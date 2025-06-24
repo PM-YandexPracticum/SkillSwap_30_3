@@ -1,6 +1,6 @@
 import ErrorPage from '@shared/ui/ErrorPage';
 import errorImage from '@shared/assets/icons/error_500.png';
-import Layout from '../Page404/layout';
+import PageLayoutConector from '../PageLayoutConnector';
 
 const Page500 = () => {
   const handleReportClick = () => {
@@ -8,7 +8,7 @@ const Page500 = () => {
   };
 
   return (
-    <Layout>
+    <PageLayoutConector>
       <ErrorPage
       imagePath={errorImage}
       title="На сервере произошла ошибка"
@@ -16,7 +16,7 @@ const Page500 = () => {
       altText="Иллюстрация ошибки 500 - внутренняя ошибка сервера"
       onReportClick={handleReportClick}
     />
-    </Layout>
+    </PageLayoutConector>
   );
 };
 
