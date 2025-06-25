@@ -14,7 +14,7 @@ function useFilter(
   Object.keys(filters).forEach((field: string) => {
     if (field === 'subcategory') {
       if (filters[field] && filters[field].length){
-        if(format === 'wantLoLearn') {
+        if(format === 'wantToLearn') {
           result = result.filter((user: CardPersonInfo) => {
             if (Array.isArray(filters[field])) {
               return filters[field].includes(String(user.skillCanTeach.id))
