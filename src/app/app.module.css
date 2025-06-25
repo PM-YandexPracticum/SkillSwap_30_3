@@ -3,10 +3,9 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-height: 100vh;
-  height: fit-content;
+  height: 100vh;
   background-color: #F9FAF7;
-  color: #253017;
+  color: black;
   font-family: Roboto, sans-serif;
   font-size: 16px;
   line-height: 24px;

@@ -1,12 +1,3 @@
-export type ButtonDetailProps = {
-  onClick?: () => void;
-};
-
-export type ButtonFavoriteProps = {
-  isFavorite?: boolean;
-  toggleFavorite?: () => void;
-};
-
 export type Skill = {
   id: number;
   name: string;
@@ -38,4 +29,11 @@ export interface CardSkillProps {
   toggleFavorite?: () => void;
   isFavorite?: boolean;
   onClick?: () => void;
+}
+
+// для компонента коннектора
+export interface CardSkillComponentProps {
+  person: TCardPersonInfoProps;
+  onClick?: () => void;
+  subcategoriesWantToLearn: Skill[];
 }
