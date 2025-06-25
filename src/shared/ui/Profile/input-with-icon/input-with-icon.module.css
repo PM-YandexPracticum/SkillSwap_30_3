@@ -1,0 +1,49 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.wrapper input {
+  width: 100%;
+  padding: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 2.75rem;
+  box-sizing: border-box;
+  caret-color: var(--color-button-active);
+  border: 1px solid var(--color-text-caption);
+  border-radius: 0.75rem;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-body);
+  color: var(--color-button-text);
+  margin-top: 0.25rem;
+}
+
+.wrapper input::placeholder {
+  color: var(--color-text-caption);
+}
+
+.wrapper label {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-body);
+  color: var(--color-button-text);
+}
+
+.wrapper input:focus {
+  outline: none;
+  box-shadow: none;
+  caret-color: var(--color-button-active);
+  border-color: var(--color-text-caption);
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  pointer-events: none;
+}
