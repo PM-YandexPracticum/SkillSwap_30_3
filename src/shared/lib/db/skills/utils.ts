@@ -1,4 +1,5 @@
 import { TCategory, TSkill, TSubcategory } from '@shared/lib/db/skills/types';
+import memoize from 'lodash/memoize';
 
 export function readAllCategories(): Promise<TCategory[]> {
   return fetch('/db/skills.json')
@@ -80,4 +81,81 @@ export function readSkillById(skillId: number): Promise<TSkill | undefined> {
     }
     return undefined;
   });
+}
+
+
+// кэшируем результаты readAllCategories с явным указанием типа возвращаемого значения
+const memoizedReadAllCategories: () => Promise<TCategory[]> = memoize(readAllCategories);
+
+// по названию скилла выдает цвет категории
+export function readSkillColorByName(
+  skillName: string
+): Promise<string | undefined> {
+  return memoizedReadAllCategories()
+    .then((categories: TCategory[]) => {
+      if (!categories || categories.length === 0) {
+        console.error("Ошибка: список категорий пуст или не определён");
+        return undefined;
+      }
+      const foundCategory = categories.find((category: TCategory) => 
+        category.subcategory.some((subcategory: TSubcategory) => 
+          subcategory.skills.some((skill: TSkill) => skill.name === skillName)
+        )
+      );
+      return foundCategory?.color;
+    })
+    .catch((error) => {
+      console.error("Ошибка при загрузке категорий:", error);
+      return undefined;
+    });
+}
+
+export function readSkillColorBySubcategoryName(
+  subcategoryName: string
+): Promise<string | undefined> {
+  return memoizedReadAllCategories()
+    .then((categories: TCategory[]) => {
+      if (!categories || categories.length === 0) {
+        console.error("Ошибка: список категорий пуст или не определён");
+        return undefined;
+      }
+      const foundCategory = categories.find((category: TCategory) => 
+        category.subcategory.some((subcategory: TSubcategory) => 
+          subcategory.name === subcategoryName
+        )
+      );
+      return foundCategory?.color;
+    })
+    .catch((error) => {
+      console.error("Ошибка при загрузке категорий:", error);
+      return undefined;
+    });
+}
+
+// Функция для получения CSS класса по цвету категории
+export function getColorClassName(color: string | undefined): string {
+  if (!color) return '';
+
+  const colorMap: Record<string, string> = {
+    EEE7F7: 'business',
+    EBE5C5: 'foreignlang',
+    E9F7E7: 'health',
+    F7E7F2: 'art',
+    E7F2F6: 'education',
+    F7EBE5: 'house',
+  };
+
+  return colorMap[color] || '';
+}
+
+export function readSkillColorClass(
+  name: string,
+  by: 'skill' | 'subcategory'
+): Promise<string> {
+  const colorPromise =
+    by === 'skill'
+      ? readSkillColorByName(name)
+      : readSkillColorBySubcategoryName(name);
+  
+  return colorPromise.then(getColorClassName);
 }

@@ -1,0 +1,67 @@
+@import '@shared/styles/fonts.css';
+@import '@shared/styles/variables.css';
+
+.skills_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.loading_indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.loading_indicator:focus {
+  outline: none;
+}
+
+.loading_indicator:focus-visible {
+  outline: var(--outline);
+  outline-offset: var(--outline-offset);
+}
+
+.spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid var(--background-teg-more);
+  border-top: 2px solid var(--color-button-text);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  will-change: transform;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading_text {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  color: var(--color-button-text);
+  font-weight: var(--font-weight-body);
+}
+
+.end_message {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+.end_text {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  color: var(--color-button-text);
+  font-weight: var(--font-weight-body);
+  opacity: 0.7;
+}

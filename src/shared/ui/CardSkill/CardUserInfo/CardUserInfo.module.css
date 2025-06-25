@@ -71,7 +71,6 @@
   line-height: 1rem;
   border-radius: 1.25rem;
   padding: 0.5rem 0.75rem;
-  background-color: var(--background-teg-art);
 }
 
 .skill_tageducation {
@@ -110,7 +109,7 @@
   font-weight: var(--font-weight-body);
   line-height: 1rem;
   border-radius: 1.25rem;
-  padding: 0.5rem 0.75rem
+  padding: 0.5rem 0.75rem;
 }
 
 .skill_tagMore:focus {
