@@ -1,6 +1,7 @@
 .item {
 	position: relative;
 	display: flex;
+  width: 100%;
 	gap: 0.5rem;
 	cursor: pointer;
 	color: #253017;
@@ -15,19 +16,20 @@
 	appearance: none;
 	position: relative;
 	box-sizing: border-box;
-	width: 1.25rem;
-	height: 1.25rem;
+	min-width: 1.25rem;
+	min-height: 1.25rem;
 	border: 0.1rem solid #253017;
 	margin: 0.125rem;
 	border-radius: 100%;
+	cursor: pointer;
 }
 
 .input:checked::after {
 	content: '';
 	position: absolute;
 	box-sizing: border-box;
-	width: 1.1rem;
-	height: 1.1rem;
+	width: 1.08rem;
+	height: 1.08rem;
 	background-color: #508826;
 	border: 0.2625rem solid #FFF;
 	border-radius: 100%;
@@ -40,4 +42,9 @@
 .input:focus-visible {
 	outline: 0.1rem solid #ABD27A;
 	outline-offset: 0.05rem;
+}
+
+.label {
+	flex-grow: 1;
+	cursor: pointer;
 }

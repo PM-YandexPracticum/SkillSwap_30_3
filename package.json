@@ -12,12 +12,13 @@
     "stylelint": "stylelint \"src/**/*.css\"",
     "stylelint:fix": "stylelint \"src/**/*.css\" --fix",
     "format": "prettier --write .",
-    "test": "jest",
+    "test": "jest --verbose",
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "clsx": "^2.1.1",
     "lodash.memoize": "^4.1.2",
+    "core-js": "^3.43.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.2"

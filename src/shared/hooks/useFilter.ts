@@ -1,4 +1,3 @@
-import { readSubcategoryById } from '../lib/db/skills/utils';
 import {TCategoryWantToLearn, CardPersonInfo} from '../lib/db/users/types';
 
 type Filter = {
@@ -15,7 +14,7 @@ function useFilter(
   Object.keys(filters).forEach((field: string) => {
     if (field === 'subcategory') {
       if (filters[field] && filters[field].length){
-        if(format === 'Хочу научиться') {
+        if(format === 'wantToLearn') {
           result = result.filter((user: CardPersonInfo) => {
             if (Array.isArray(filters[field])) {
               return filters[field].includes(String(user.skillCanTeach.id))
@@ -25,7 +24,7 @@ function useFilter(
           })
         }
 
-        if(format === 'Могу научить') {
+        if(format === 'canTeach') {
           result = result.filter((user: CardPersonInfo) => {
             return user.subcategoriesWantToLearn.some((skill: TCategoryWantToLearn) => {
               if (Array.isArray(filters[field])) {
@@ -37,7 +36,7 @@ function useFilter(
           })
         } 
 
-        if(format === 'Всё' || format === undefined || format === '') {
+        if(format === undefined || format === '') {
           const canTeachResult = result.filter((user: CardPersonInfo) =>{
             if (Array.isArray(filters[field])) {
               return filters[field].includes(String(user.skillCanTeach.id))
