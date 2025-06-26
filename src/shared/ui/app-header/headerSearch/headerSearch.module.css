@@ -15,7 +15,7 @@
     flex-grow: 1;
 }
 
-input.searchInput {
+.search input.searchInput {
     all: unset;
     border: none;
     outline: none;
