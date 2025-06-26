@@ -2,17 +2,13 @@ import React from 'react';
 import styles from './headerSearch.module.css';
 import search from '../../../assets/icons/search.svg';
 import type { HeaderSearchProps } from './types';
-import clsx from 'clsx';
 
 export const HeaderSearch = ({
-    isAuthenticated,
     onChange,
     onKeyDown,
+    value
 }: HeaderSearchProps) => (
-    <div className={clsx(styles.search, {
-        [styles.searchAuth]: isAuthenticated,
-        [styles.searchGuest]: !isAuthenticated,
-    })}>
+    <div className={styles.search}>
         <img src={search} alt="Иконка поиска" loading="lazy" />
         <input
             id="skill-search"
@@ -22,6 +18,7 @@ export const HeaderSearch = ({
             className={styles.searchInput}
             onChange={onChange}
             onKeyDown={onKeyDown}
+            value={value}
         />
     </div>
 );

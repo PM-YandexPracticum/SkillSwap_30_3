@@ -15,6 +15,7 @@ export const CardSkill: React.FC<CardSkillProps> = React.memo(
             name={person.name}
             avatarUrl={person.avatarUrl}
             location={person.location}
+            gender={person.gender}
             age={person.age}
             skillCanTeach={person.skillCanTeach}
             onClick={onClick}

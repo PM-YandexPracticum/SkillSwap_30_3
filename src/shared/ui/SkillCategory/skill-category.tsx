@@ -40,19 +40,19 @@ export const SkillCategoryUI: React.FC<TSkillCategoryUIProps> = ({
       <ul className={styles.subcategory}>
         {subcategory.map(skill => (
           <li
-            key={skill}
-            onClick={() => onSkillClick?.(skill)}
+            key={skill.name}
+            onClick={() => onSkillClick?.(skill.name)}
             onKeyDown={e => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                onSkillClick?.(skill);
+                onSkillClick?.(skill.name);
               }
             }}
             className={styles.skill}
             tabIndex={0}
             role="button"
           >
-            {skill}
+            {skill.name}
           </li>
         ))}
       </ul>

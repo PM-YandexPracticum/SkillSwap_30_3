@@ -140,7 +140,7 @@ const CardUserInfo: FC<TCardUserInfoProps> = ({
                 aria-label={`${showAllSkills ? 'Скрыть' : 'Показать'} ещё ${expandableSkills.length} навыков`}
                 role="button"
               >
-                {showAllSkills ? '0' : `+${expandableSkills.length}`}
+                {showAllSkills ? 'Скрыть' : `+${expandableSkills.length}`}
               </button>
             )}
           </div>

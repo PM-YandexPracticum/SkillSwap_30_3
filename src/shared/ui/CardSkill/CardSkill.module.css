@@ -10,6 +10,7 @@
   padding: 1.25rem;
   box-sizing: border-box;
   flex-flow: column wrap;
+  height: fit-content;
 }
 
 .container_cardInfo {

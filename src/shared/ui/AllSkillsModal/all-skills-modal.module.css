@@ -1,8 +1,11 @@
 .overlay {
-  position: fixed;
+  z-index: 9999;
+  position: absolute;
+  height: 100%;
+  width: 100%;
   inset: 0;
   background: rgb(0 0 0 / 0%);
-  z-index: 2;
+  padding: 5.875rem 0 0 2.25rem;
 }
 
 .modal {
@@ -12,8 +15,8 @@
   padding: 3.75rem; /* 60px */
   width: clamp(55rem, 80vw, 71rem);
   opacity: 0;
-  transition:
-    opacity 0.2s ease,
+  transition: opacity 0.2s ease;
+  border: 1px solid #69735D;
 }
 
 .modalVisible {

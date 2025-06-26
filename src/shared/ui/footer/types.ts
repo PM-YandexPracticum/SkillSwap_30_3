@@ -7,4 +7,5 @@ export type footerProps = {
   onBlogClick?: ClickHandler;
   onPrivacyClick?: ClickHandler;
   onAgreementClick?: ClickHandler;
+  onLogo?: ClickHandler;
 }

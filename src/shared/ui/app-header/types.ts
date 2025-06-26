@@ -1,3 +1,5 @@
+import { ChangeEvent, InputEventHandler } from "react";
+
 export type ClickHandler = () => void;
 
 export interface HeaderProps {
@@ -10,4 +12,7 @@ export interface HeaderProps {
     onNotificationsClick?: ClickHandler;
     onFavoritesClick?: ClickHandler;
     onSkillsToggle?: ClickHandler;
+    onSearchChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onLogo?: ClickHandler;
+    searchValue?: string;
 }

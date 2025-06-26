@@ -1,4 +1,4 @@
-import React, { FC, memo, useEffect, useState } from 'react';
+import React, { FC, memo, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import styles from './FilterWidget.module.css';
 
@@ -17,26 +17,26 @@ import { readAllUsers } from '@/shared/lib/db/users/utils';
 import { Preloader } from '@/shared/ui/Preloader';
 
 export const FilterWidget: FC<FilterWidgetProps>= memo(
-  ({setFilteredUsers}) => {
+  ({setFilteredUsers, setIsFilterLoading, setIsCatalogLoading}) => {
     const [searchParams, setSearchParams] = useSearchParams();
-    const formatParams = searchParams.get('format') || '';
-    const subсategoryParams = searchParams.getAll('subсategory') || [];
-    const genderParams = searchParams.get('gender') || '';
-    const locationParams = searchParams.getAll('location') || [];
+    const formatParams = useMemo(() => searchParams.get('format') || '', [searchParams.get('format')]);
+    const subсategoryParams = useMemo(() => searchParams.getAll('subсategory'), [String(searchParams.getAll('subсategory'))]);
+    const genderParams = useMemo(() => searchParams.get('gender') || '', [searchParams.get('gender')]);
+    const locationParams = useMemo(() => searchParams.getAll('location'), [String(searchParams.getAll('location'))]);
     
-    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [isWidgetLoading, setIsWidgetLoading] = useState<boolean>(true);
     const [users, setUsers] = useState<CardPersonInfo[]>([]);
     const [citiesOption, setSitiesOption] = useState<string[]>([]);
     const [skillsOption, setSkillsOption] = useState<TCategory[]>([]);
 
     useEffect(() => {
       Promise.all([readAllUsers(), readAllCities(), readAllCategories()])
-      .then(([usersRespons, citiesRespons, categoriesRespons]) => {
-        setUsers(usersRespons);
-        setSitiesOption(citiesRespons);
-        setSkillsOption(categoriesRespons);
+      .then(([usersResponse, citiesResponse, categoriesResponse]) => {
+        setUsers(usersResponse);
+        setSitiesOption(citiesResponse);
+        setSkillsOption(categoriesResponse);
 
-        setIsLoading(false);
+        setIsWidgetLoading(false);
       }).catch(error => {
         console.error('Получение данных о навыках, городах и пользователях', error);
       });
@@ -46,12 +46,14 @@ export const FilterWidget: FC<FilterWidgetProps>= memo(
         setSitiesOption([]);
         setSkillsOption([]);
 
-        setIsLoading(true);
+        setIsWidgetLoading(true);
       }
     }, []);
 
     useEffect(() => {      
-      if (!isLoading){
+      if (!isWidgetLoading){
+        setIsCatalogLoading(true);
+        setIsFilterLoading(true);
         setFilteredUsers(useFilter(
           users,
           {
@@ -61,12 +63,14 @@ export const FilterWidget: FC<FilterWidgetProps>= memo(
           },
           formatParams
         ));
+        setIsFilterLoading(false);
       }
 
       return () => {
         setFilteredUsers([]);
+        setIsFilterLoading(true);
       }
-    }, [formatParams, subсategoryParams, genderParams, locationParams]);
+    }, [formatParams, subсategoryParams, genderParams, locationParams, isWidgetLoading]);
 
     const formatOption = [
       {
@@ -75,7 +79,7 @@ export const FilterWidget: FC<FilterWidgetProps>= memo(
       },
       {
         title: 'Хочу научиться',
-        value: 'wantLoLearn'
+        value: 'wantToLearn'
       },
       {
         title: 'Могу научить',
@@ -130,7 +134,7 @@ export const FilterWidget: FC<FilterWidgetProps>= memo(
     const [isOpenCities, setIsOpenCities] = useState<boolean>();
     const [isOpenCategories, setIsOpenCategories] = useState<boolean>();
 
-    if (isLoading) {
+    if (isWidgetLoading) {
       return (
         <aside className={`${styles.container} ${styles.preloader}`}>
           <Preloader />
@@ -140,16 +144,21 @@ export const FilterWidget: FC<FilterWidgetProps>= memo(
 
     return (
       <aside className={styles.container}>
-        {Array.from(searchParams.entries()).length ? (
+        {Array.from(searchParams.entries()).filter(([key]) => key !== 'search').length ? (
           <div className={styles.title_container}>
             <h3 className={styles.title}>
-              Фильтры ({Array.from(searchParams.entries()).length})
+              Фильтры ({Array.from(searchParams.entries()).filter(([key]) => key !== 'search').length})
             </h3>
             <FilterButtonUI
               title={'Сбросить'}
               icon={cross}
               onClick={() => {
-                setSearchParams('');
+                Array.from(searchParams.entries()).map(([key]) => {
+                  if (key !== 'search') {
+                    searchParams.delete(key);
+                    setSearchParams(searchParams);
+                  }
+                })
               }}
             />
           </div>

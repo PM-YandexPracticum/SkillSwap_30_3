@@ -1,13 +1,8 @@
-export type SkillCategory = {
-  category: string;
-  subcategory: string[];
-  icon: string;
-  color: string;
-};
+import { TCategory } from "@/shared/lib/db/skills/types";
 
 export type AllSkillsModalProps = {
   visible: boolean;
-  categories: SkillCategory[];
+  categories: TCategory[];
   onClose?: () => void;
   onSkillClick?: (skill: string) => void;
 };

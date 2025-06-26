@@ -14,7 +14,7 @@ export type CardPersonInfo = {
   avatarUrl: string;
   name: string;
   location: string;
-  age: number;
+  age: string;
   gender: string;
   images?: string[];
   skillCanTeach: TSkillCanTeach;

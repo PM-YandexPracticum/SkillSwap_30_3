@@ -4,59 +4,58 @@ import { Logo } from './logo/logo';
 import { footerProps } from './types';
 import { NavItem } from './navItem';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-export const Footer: React.FC<footerProps> = React.memo(({
+export const FooterUI: React.FC<footerProps> = React.memo(({
   onAboutClick,
   onSkilsClick,
   onContactClick,
   onBlogClick,
   onPrivacyClick,
-  onAgreementClick
+  onAgreementClick,
+  onLogo
 }: footerProps) => {
-  const handleClick = useCallback((e: React.MouseEvent, callback?: () => void) => {
-    e.preventDefault();
+  const handleClick = useCallback((callback?: () => void, e?: React.MouseEvent) => {
+    e?.preventDefault();
     callback?.();
   }, []);
 
   return (
     <footer className={styles.footer} aria-label="Подвал">
-      <div className={styles.logoBlock}>
-        <Logo />
-      </div>
-      <div className={styles.container}>
-        <ul className={styles.buttons_list}>
-          <NavItem href="#" title="О проекте" onClick={(e) => handleClick(e, onAboutClick)} />
-          <NavItem href="#" title="Все навыки" onClick={(e) => handleClick(e, onSkilsClick)} />
-        </ul>
-        <ul className={styles.buttons_list}>
-          <li className={styles.item}>
-            <Link to="#" onClick={(e) => handleClick(e, onContactClick)}>
-              Контакты
-            </Link>
-          </li>
-          <li className={styles.item}>
-            <Link to="#" onClick={(e) => handleClick(e, onBlogClick)}>
-              Блог
-            </Link>
-          </li>
-        </ul>
-
-        <ul className={styles.buttons_list}>
-          <li className={styles.item}>
-            <Link to="#" onClick={(e) => handleClick(e, onPrivacyClick)}>
-              Политика конфиденциальности
-            </Link>
-          </li>
-          <li className={styles.item}>
-            <Link to="#" onClick={(e) => handleClick(e, onAgreementClick)}>
-              Пользовательское соглашение
-            </Link>
-          </li>
-        </ul>
-      </div>
-      <div className={styles.copyright}>
-        <p>SkillSwap — 2025</p>
-      </div>
+      <Logo className={styles.logoBlock} onClick={() => handleClick(onLogo)}/>
+      <nav className={styles.container}>
+        <li className={styles.item}>
+          <Link to="#" onClick={(e) => handleClick(onAboutClick, e)}>
+            О проекте
+          </Link>
+        </li>
+        <li className={styles.item}>
+          <Link to="#" onClick={(e) => handleClick(onSkilsClick, e)}>
+            Все навыки
+          </Link>
+        </li>
+        <li className={styles.item}>
+          <Link to="#" onClick={(e) => handleClick(onContactClick, e)}>
+            Контакты
+          </Link>
+        </li>
+        <li className={styles.item}>
+          <Link to="#" onClick={(e) => handleClick(onBlogClick, e)}>
+            Блог
+          </Link>
+        </li>
+        <li className={styles.item}>
+          <Link to="#" onClick={(e) => handleClick(onPrivacyClick, e)}>
+            Политика конфиденциальности
+          </Link>
+        </li>
+        <li className={styles.item}>
+          <Link to="#" onClick={(e) => handleClick(onAgreementClick, e)}>
+            Пользовательское соглашение
+          </Link>
+        </li>
+      </nav>
+      <p className={styles.copyright}>SkillSwap — 2025</p>
     </footer>
-);});
+  )
+});

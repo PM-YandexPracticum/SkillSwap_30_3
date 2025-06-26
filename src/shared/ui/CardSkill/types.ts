@@ -1,3 +1,5 @@
+import { CardPersonInfo } from "@/shared/lib/db/users/types";
+
 export type ButtonDetailProps = {
   onClick?: () => void;
 };
@@ -5,35 +7,16 @@ export type ButtonDetailProps = {
 export type ButtonFavoriteProps = {
   isFavorite?: boolean;
   toggleFavorite?: () => void;
-};
-
-export type Skill = {
-  id: number;
-  name: string;
-};
-
-// для компонента - информация пользователя
-export type TCardPersonInfoProps = {
-  id: number;
-  avatarUrl: string;
-  name: string;
-  location: string;
-  age: string;
-  skillCanTeach: {
-    id: number; 
-    name: string;
-  };
-  subcategoriesWantToLearn: Skill[];
-};
+}
 
 // для кнопки +2
-export type TCardUserInfoProps = TCardPersonInfoProps & {
+export type TCardUserInfoProps = CardPersonInfo & {
   onClick?: () => void;
 };
 
 // для целикового компонента
 export interface CardSkillProps {
-  person: TCardPersonInfoProps;
+  person: CardPersonInfo;
   onDetailsClick: () => void;
   toggleFavorite?: () => void;
   isFavorite?: boolean;

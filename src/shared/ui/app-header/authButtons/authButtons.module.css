@@ -3,6 +3,9 @@
 
 .auth_buttons {
     display: flex;
-    padding-left: 1.2rem;
-    gap: 8px;
+    gap: 0.5rem;
+}
+
+.auth_buttons button {
+    cursor: pointer;
 }
