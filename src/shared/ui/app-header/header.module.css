@@ -5,27 +5,15 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 2rem 2.25rem 1.25rem;
+  padding: 2.25rem 2.25rem 1.25rem;
   background-color: var(--color-page);
   gap: 2rem;
-  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
-.logoBlock {
-  display: flex;
-  height: 100%;
-  gap: 1.5rem;
-}
-
-.rightBlock {
-  display: flex;
-  align-items: center;
-}
-
 .iconBlock {
   display: flex;
-  gap: 0.5rem;
+  gap: 1.25rem;
 }

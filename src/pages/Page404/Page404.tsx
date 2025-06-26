@@ -1,6 +1,5 @@
 import ErrorPage from '@shared/ui/ErrorPage';
 import errorImage from '@shared/assets/icons/error_404.png';
-import PageLayoutConector from '../PageLayoutConnector';
 
 const Page404 = () => {
   const handleReportClick = () => {
@@ -8,15 +7,13 @@ const Page404 = () => {
   };
 
   return (
-    <PageLayoutConector>
-      <ErrorPage
-      imagePath={errorImage}
-      title="Страница не найдена"
-      description="К сожалению, эта страница недоступна. Вернитесь на главную страницу или попробуйте позже"
-      altText="Иллюстрация ошибки 404 - страница не найдена"
-      onReportClick={handleReportClick}
+    <ErrorPage
+    imagePath={errorImage}
+    title="Страница не найдена"
+    description="К сожалению, эта страница недоступна. Вернитесь на главную страницу или попробуйте позже"
+    altText="Иллюстрация ошибки 404 - страница не найдена"
+    onReportClick={handleReportClick}
     />
-    </PageLayoutConector>
   );
 };
 

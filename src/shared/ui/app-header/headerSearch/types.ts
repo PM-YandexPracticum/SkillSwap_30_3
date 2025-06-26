@@ -1,5 +1,5 @@
-export interface HeaderSearchProps {
-    isAuthenticated: boolean;
-    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
-}
+import React from "react";
+
+export type HeaderSearchProps = {
+  isAuthenticated: boolean;
+} & React.ComponentPropsWithoutRef<'input'>;

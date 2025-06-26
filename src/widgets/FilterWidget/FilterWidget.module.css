@@ -7,11 +7,12 @@
   border-radius: 0.75rem;
   gap: 2.5rem;
   color: #253017;
-  width: 20.25rem;
+  min-width: 20.25rem;
+  height: fit-content;
 }
 
 .preloader {
-  height: 80vh;
+  height: 60vh;
 }
 
 .title_container {
@@ -86,7 +87,7 @@
   background-image: url('../../shared/assets/icons/checkbox-remove.svg');
 }
 
-.сategory > div > input:checked::after {
+.сategory > div > input:checked + label::after {
   content: '';
   z-index: 20;
   position: absolute;

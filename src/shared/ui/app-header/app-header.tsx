@@ -18,7 +18,16 @@ const HeaderComponent = ({
     onNotificationsClick,
     onFavoritesClick,
     onSkillsToggle,
+    onLogo,
+    onSearchChange,
+    searchValue
 }: HeaderProps) => {
+    const handleLogo = useCallback(() => {
+        if (onLogo) {
+            onLogo();
+        }
+    }, [onLogo]);
+
     const handleLogin = useCallback(() => {
         if (onLogin) {
             onLogin();
@@ -57,39 +66,34 @@ const HeaderComponent = ({
 
     return (
         <header className={styles.header} role="banner">
-            <div className={styles.logoBlock}>
-                <Logo />
+            <Logo onClick={handleLogo}/>
+
+            <HeaderMenu onSkillsToggle={handleSkillsToggle} />
+
+            
+            <HeaderSearch 
+                isAuthenticated={isAuthenticated}
+                onChange={onSearchChange}
+                value={searchValue}
+            />
+
+            <div className={styles.iconBlock}>
+                <IconButton icon="theme" onClick={handleThemeToggle} title="Сменить тему" />
+                {isAuthenticated && (
+                    <>
+                        <IconButton icon="notifications" onClick={handleNotificationsClick} title="Уведомления" />
+                        <IconButton icon="favorites" onClick={handleFavoritesClick} title="Избранные" />
+                    </>
+                )}
             </div>
 
-            <div>
-                <HeaderMenu onSkillsToggle={handleSkillsToggle} />
-            </div>
-
-            <div>
-                <HeaderSearch isAuthenticated={isAuthenticated} />
-            </div>
-
-            <div className={styles.rightBlock}>
-                <div className={styles.iconBlock}>
-                    <IconButton icon="theme" onClick={handleThemeToggle} title="Сменить тему" />
-                    {isAuthenticated && (
-                        <>
-                            <IconButton icon="notifications" onClick={handleNotificationsClick} title="Уведомления" />
-                            <IconButton icon="favorites" onClick={handleFavoritesClick} title="Избранные" />
-                        </>
-                    )}
-                </div>
-
-                <div className={styles.authButtonsOutside}>
-                    {isAuthenticated ? (
-                        <UserInfo userName={userName} avatarUrl={avatarUrl} />
-                    ) : (
-                        <AuthButtons onLogin={handleLogin} onRegister={handleRegister} />
-                    )}
-                </div>
-            </div>
+            {isAuthenticated ? (
+                <UserInfo userName={userName} avatarUrl={avatarUrl} />
+            ) : (
+                <AuthButtons onLogin={handleLogin} onRegister={handleRegister} />
+            )}
         </header>
     );
 };
 
-export const Header = React.memo(HeaderComponent);
+export const HeaderUI = React.memo(HeaderComponent);
