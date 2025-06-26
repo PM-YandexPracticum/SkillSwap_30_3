@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import styles from './app.module.css';
 import { RegistrationPage } from '@/pages/RegistrationPage/RegistrationPage';
 import { ProtectedRoute } from './providers/ProtectedRoute';
+import { SkillsPage } from '@/pages/SkillsPage/SkillsPage';
 import { HomePage } from '@/pages/HomePage';
 import Page404 from '@/pages/Page404';
 import Page500 from '@/pages/Page500';
@@ -15,6 +16,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='*' element={<Page404 />} />
+        <Route path="/skill/:id" element={<SkillsPage />} />
         <Route path='/500' element={<Page500 />} />
         <Route element={<ProtectedRoute isAuthenticated={false} />}>
           <Route path='/registration' element={<RegistrationPage />} />
