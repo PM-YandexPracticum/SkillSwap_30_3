@@ -1,0 +1,16 @@
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 70vh;
+  padding: 2rem 2.25rem 3.75rem;
+  margin: auto;
+  width: 1440px;
+  color: var(--color-button-text);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-body);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}

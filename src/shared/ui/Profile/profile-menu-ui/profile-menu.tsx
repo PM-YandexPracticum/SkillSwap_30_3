@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
+import clsx from 'clsx';
 import styles from './profile-menu.module.css';
 import { NavLink } from 'react-router-dom';
-import { ProfileMenuUIProps } from './type';
 import favorites from '@shared/assets/icons/favorites.svg';
 import idea from '@shared/assets/icons/idea.svg';
 import user from '@shared/assets/icons/user.svg';
 import request from '@shared/assets/icons/request.svg';
 import message from '@shared/assets/icons/message-text.svg';
 
-export const ProfileMenuUI: FC<ProfileMenuUIProps> = ({ pathname }) => {
+export const ProfileMenuUI: FC = () => {
   const menuItems = [
     { label: 'Заявки', path: '/profile/requests', icon: request },
     { label: 'Мои обмены', path: '/profile/exchanges', icon: message },
@@ -26,7 +26,7 @@ export const ProfileMenuUI: FC<ProfileMenuUIProps> = ({ pathname }) => {
             to={path}
             end={end}
             className={({ isActive }) =>
-              `${styles.link} ${isActive ? styles.link_active : ''}`
+              clsx(styles.link, { [styles.link_active]: isActive })
             }
           >
             <img

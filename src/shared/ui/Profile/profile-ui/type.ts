@@ -14,8 +14,8 @@ export type ProfileUIProps = {
   handleSubmit: (e: SyntheticEvent) => void;
   handleEditAvatar: () => void;
   handlePasswordChange: () => void;
-  handleInputChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => void;
+  handleInputChange: (e: React.ChangeEvent<Element>) => void;
   isFormChanged: boolean;
+  emailErrorText?: string;
+  nameErrorText?: string;
 };

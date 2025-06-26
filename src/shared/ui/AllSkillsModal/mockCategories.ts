@@ -1,9 +1,9 @@
-import bookIcon from '../../assets/icons/book.png';
-import breifcaseIcon from '../../assets/icons/briefcase.png';
-import globalIcon from '../../assets/icons/global.png';
-import homeIcon from '../../assets/icons/home.png';
-import lifestyleIcon from '../../assets/icons/lifestyle.png';
-import paletteIcon from '../../assets/icons/palette.png';
+import bookIcon from '../../assets/icons/book.svg';
+import breifcaseIcon from '../../assets/icons/briefcase.svg';
+import globalIcon from '../../assets/icons/global.svg';
+import homeIcon from '../../assets/icons/home.svg';
+import lifestyleIcon from '../../assets/icons/lifestyle.svg';
+import paletteIcon from '../../assets/icons/palette.svg';
 
 export const categories = [
   {

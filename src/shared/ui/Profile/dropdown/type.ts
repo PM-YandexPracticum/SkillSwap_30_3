@@ -5,4 +5,5 @@ export type DropdownSelectProps = {
   options: string[];
   value: string;
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  placeholder?: string;
 }

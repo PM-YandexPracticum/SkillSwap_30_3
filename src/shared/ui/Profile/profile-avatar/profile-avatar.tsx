@@ -15,7 +15,7 @@ export const ProfileAvatar: React.FC<AvatarProps> = ({ avatarUrl, onEdit }) => {
         type="button"
         aria-label="Редактировать аватар"
       >
-        <img src={editIcon} alt="" className={styles.editIcon} />
+        <img src={editIcon} alt="Иконка редактирования аватара" className={styles.editIcon} />
       </button>
     </div>
   );

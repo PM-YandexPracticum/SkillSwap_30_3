@@ -2,4 +2,6 @@ export interface TextareaWithIconProps extends React.TextareaHTMLAttributes<HTML
   icon?: string;
   label?: string;
   id: string;
+  name: string;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }

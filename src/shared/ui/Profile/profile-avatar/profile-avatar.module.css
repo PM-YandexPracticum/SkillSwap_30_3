@@ -37,6 +37,11 @@
   background-color: var(--background-button-disabled);
 }
 
+.editButton:focus {
+  outline: none;
+  border: 1px solid var(--color-button-active);
+}
+
 .editIcon {
   width: 24px;
   height: 24px;

@@ -6,6 +6,8 @@ export const TextareaWithIcon: React.FC<TextareaWithIconProps> = ({
   icon,
   label,
   id,
+  name,
+  onChange,
   ...rest
 }) => {
   return (
@@ -15,8 +17,14 @@ export const TextareaWithIcon: React.FC<TextareaWithIconProps> = ({
           {label}
         </label>
       )}
-      <textarea id={id} className={styles.textarea} {...rest} />
-      {icon && <img src={icon} alt="" className={styles.icon} loading="lazy" />}
+      <textarea
+        name={name}
+        onChange={onChange}
+        id={id}
+        className={styles.textarea}
+        {...rest}
+      />
+      {icon && <img src={icon} alt="Иконка поля О себе" className={styles.icon} loading="eager" />}
     </div>
   );
 };

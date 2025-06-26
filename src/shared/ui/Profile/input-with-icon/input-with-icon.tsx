@@ -5,12 +5,13 @@ import styles from './input-with-icon.module.css';
 
 export const InputWithIcon: React.FC<InputWithIconProps> = ({
   icon,
+  hasError,
   ...rest
 }) => {
   return (
-    <div className={`${styles.wrapper}`}>
+    <div className={`${styles.wrapper} ${hasError ? styles.error : ''}`}>
       <InputField {...rest} />
-      {icon && <img src={icon} alt="" className={styles.icon} loading="lazy" />}
+      {icon && <img src={icon} alt="Иконка поля ввода" className={styles.icon} loading="eager" />}
     </div>
   );
 };
