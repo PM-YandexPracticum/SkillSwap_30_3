@@ -120,12 +120,14 @@ export const HomePage = () => {
 
                 <div className={styles.heading_catalog}>
                   <h2 className={styles.title}>Подходящие предложения: {catalog.length}</h2>
-                  <button 
-                    className={styles.sort_button}
-                    onClick={() => {sortTitle === 'Сначала новые' ? setSortTitle('Сначала старые') : setSortTitle('Сначала новые')}}>
-                      <img src={sortIcon} alt={sortTitle} className={styles.sort_icon} loading="lazy"/>
-                    <p className={styles.sort_title}>{sortTitle}</p>
-                  </button>
+                  {catalog.length > 0 && (
+                    <button 
+                      className={styles.sort_button}
+                      onClick={() => {sortTitle === 'Сначала новые' ? setSortTitle('Сначала старые') : setSortTitle('Сначала новые')}}>
+                        <img src={sortIcon} alt={sortTitle} className={styles.sort_icon} loading="lazy"/>
+                      <p className={styles.sort_title}>{sortTitle}</p>
+                    </button>
+                  )}
                 </div>
                 <CardSkillsListComponent 
                   catalog={catalog}
