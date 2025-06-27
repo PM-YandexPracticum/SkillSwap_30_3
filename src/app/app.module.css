@@ -1,3 +1,5 @@
+@import url('../shared/styles/globals.css');
+
 .app {
   display: flex;
   flex-direction: column;
